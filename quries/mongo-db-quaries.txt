@@ -1,0 +1,66 @@
+denormalization
+[
+  {
+    $lookup: {
+      from: "station",
+      localField: "Site_ID",
+      foreignField: "site id",
+      as: "station_data",
+    },
+  },
+  {
+    $lookup: {
+      from: "constituencies",
+      localField: "station_data.constituencies",
+      foreignField: "constituencies_id",
+      as: "constituencies",
+    },
+  },
+  {
+    $addFields: {
+      "station_data.constituencies":
+        "$constituencies",
+    },
+  },
+  {
+    $unset: "constituencies",
+  },
+  {
+    $out: "denormalized station of 501 and its records",
+  },
+]
+testing
+1:the number of records
+
+[
+  {
+    $count:"ObjectId2",
+  },
+]
+
+#############################################
+2:the minmum date
+
+[
+  {
+    $sort:{Date_Time: -1,},
+  },
+  {
+    $limit:10,
+  },
+]
+
+###########################################
+3:the maximum date
+
+[
+  {
+    $sort:
+      {Date_Time: 1,},
+  },
+  {
+    $limit:10,
+  },
+]
+
+
