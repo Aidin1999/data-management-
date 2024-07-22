@@ -64,4 +64,4 @@ This project demonstrates the complete workflow of managing and processing large
 
 ---
 
-**Project by:** [Your Name]
+**Project by:** Aidin Miralmasi
