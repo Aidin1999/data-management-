@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document is part of my job in data management, where I handle large datasets. The tasks include normalizing data and creating a database in MySQL. 
+This document is part of my job in data management, where I handle large datasets. The tasks include normalizing data and creating a database in MySQL and Mongo-DB. 
 
 ## Project Components
 
